@@ -1,0 +1,21 @@
+.container-header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.container-header >.barra-icones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.container-header >.barra-icones >.logo-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-header>.titulo{
+    height: 30px;
+}
+.container-header>.titulo>p{
+    margin: 0 0 0 4%;
+}

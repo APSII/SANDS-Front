@@ -1,0 +1,46 @@
+.container-card {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 250px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.container-card>.card-img {
+    border-radius: 30px;
+}
+
+.container-card>.card-img>img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+.container-card>.card-body{
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.container-card>.card-body>.card-titulo>h5{
+    margin: 5px 0 5px 0;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+}
+.container-card>.card-body>.card-endereco>h5,p{
+    margin: 0;
+    margin: 5px 0 5px 0;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: rgba(0, 0, 0, 0.6);
+}
+.container-card>.card-body>.card-usuarios>.card-label-usuarios>h5{
+    margin: 5px 0 5px 0;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+}

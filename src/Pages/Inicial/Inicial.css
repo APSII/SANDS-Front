@@ -1,0 +1,30 @@
+.container-login {
+    background-image: url('../../assets/bg-login.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container-login>.card-login{
+    height: 350px;
+    width: 300px;
+    background-color: white;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-login>.card-login>form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-login>.card-login>form>.input-login{
+    margin: 5px;
+    width: 100%;
+}
