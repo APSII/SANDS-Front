@@ -15,7 +15,14 @@
 }
 .container-header>.titulo{
     height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 .container-header>.titulo>p{
     margin: 0 0 0 4%;
+}
+.container-header>.titulo>button{
+    margin-bottom: auto;
+    margin-right: 25px;
 }

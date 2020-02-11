@@ -6,6 +6,7 @@
     background-color: whitesmoke;
     border-radius: 5px;
     margin-top: 10px;
+    box-shadow: 5px 3px 10px #888888;
 }
 
 .container-card>.card-img {

@@ -6,9 +6,11 @@ import FormCadastro from "../../Components/Form-Cadastro";
 import './Inicial.css'
 import logo from '../../assets/logo.png'
 
-const page = 2
 
-export default function Inicial() {
+export default function Inicial(props) {
+  
+  const page = props.page === 'login'? 1 : 2
+  
   return (
     <div className="container-login">
         <div className="card-login">
