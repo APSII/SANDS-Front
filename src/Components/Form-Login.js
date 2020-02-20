@@ -4,7 +4,7 @@ import api from '../Service/api'
 
 // import { Container } from './styles';
 
-export default function FormLogin() {
+export default function FormLogin(props) {
   const [usuario,setUsuario] = useState('')
   const [senha, setSenha] = useState('')
 
@@ -16,9 +16,14 @@ export default function FormLogin() {
   }
   const handleSubmit = event =>{
     event.preventDefault()
-    api.post('/users',{usuario, senha}).then(res =>{
-      console.log(res)
-    })
+    api.post('/authentication', {"strategy":"local","email":usuario, "password":senha})
+      .then(res =>{
+        const token = res.data.accessToken
+        localStorage.setItem('auth_token',token)
+        props.history.push('/unidade')
+      }).catch(res =>{
+        console.log(res)
+      })
   }
 
   return (

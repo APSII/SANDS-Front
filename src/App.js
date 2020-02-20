@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 import { ThemeProvider } from "@material-ui/core";
 import { createMuiTheme } from '@material-ui/core/styles';
 
@@ -15,13 +15,18 @@ const palette = {
 const theme = createMuiTheme({ palette });
 
 function App() {
+  const isAuthenticated = localStorage.getItem('auth_token') !== null
   return (
     <ThemeProvider theme={theme}>
       <Router>
         <Switch>
           <Route path='/' exact render={(props)=><Inicial {...props} page='login' />} />
-          <Route path='/doacoes' component={Doacoes} />
-          <Route path='/unidade' component={Main} />
+          <Route path='/doacoes'>
+            {isAuthenticated ? <Doacoes /> : <Redirect to="/" />}
+          </Route>
+          <Route path='/unidade' component={Main} >
+            {isAuthenticated ? <Main /> : <Redirect to="/" />}
+          </Route>
         </Switch>
       </Router>
     </ThemeProvider>
