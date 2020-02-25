@@ -1,5 +1,6 @@
 import React,{ useState } from 'react';
 import { TextField, Button } from '@material-ui/core';
+import { useHistory } from 'react-router-dom';
 import api from '../Service/api'
 
 // import { Container } from './styles';
@@ -7,6 +8,7 @@ import api from '../Service/api'
 export default function FormLogin(props) {
   const [usuario,setUsuario] = useState('')
   const [senha, setSenha] = useState('')
+  let history = useHistory()
 
   const handleUsuario = event =>{
     setUsuario(event.target.value)
@@ -20,7 +22,7 @@ export default function FormLogin(props) {
       .then(res =>{
         const token = res.data.accessToken
         localStorage.setItem('auth_token',token)
-        props.history.push('/unidade')
+        history.push('/unidade')
       }).catch(res =>{
         console.log(res)
       })
