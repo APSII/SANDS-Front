@@ -8,29 +8,32 @@ import './Header.css'
 import logo from "../../assets/logo-header.png";
 
 
-export default function Header(props) {
-  return (
-    <div className="container-header">
-        <div className="barra-icones">
-            <div className="logo-header">
-                <img src={logo} alt="SANDS" />
+export default function Header({ setToggle, nome}) {
+    const handleClick = event =>{
+        setToggle(true)
+    }
+    return (
+        <div className="container-header">
+            <div className="barra-icones">
+                <div className="logo-header">
+                    <img src={logo} alt="SANDS" />
+                </div>
+                <div className="botoes-header">
+                    <IconButton>
+                        <Pesquisar />
+                    </IconButton>
+                    <IconButton>
+                        <Menu />
+                    </IconButton>
+                </div>
             </div>
-            <div className="botoes-header">
-                <IconButton>
-                    <Pesquisar />
-                </IconButton>
-                <IconButton>
-                    <Menu />
-                </IconButton>
+            <div className="titulo">
+                <p>{nome}</p>
+                <Button variant="contained" onClick={handleClick} color='primary' startIcon={<AddIcon />} >
+                    CRIAR UNIDADE
+                </Button>
             </div>
+            <Divider />
         </div>
-        <div className="titulo">
-            <p>{props.nome}</p>
-            <Button variant="contained" color='primary' startIcon={<AddIcon />} >
-                CRIAR UNIDADE
-            </Button>
-        </div>
-        <Divider />
-    </div>
-  );
+    );
 }

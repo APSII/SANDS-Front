@@ -3,11 +3,16 @@ import { TextField, Button } from '@material-ui/core';
 
 import logo from '../../assets/logo.png'
 import './Modal_Unidade.css'
-export default function Modal_Unidade(props) {
+export default function Modal_Unidade({show, setToggle}) {
   
-  const toggle_modal = props.toggle === 'show'? '': 'toggle-modal'
+  var toggle = show
+  const handleClick = event => {
+    toggle = 'modal-fade toggle-modal'
+    setToggle(false)
+  }
+  
   return (
-    <div className={`modal-fade ${toggle_modal}`} >
+    <div className={toggle} onClick={handleClick} >
         <div className="modal-container">
             <div className="header-modal">
                 <img src={logo} alt="SANDS" />
