@@ -9,9 +9,9 @@ export default function Main() {
   const [toggle, setToggle] = useState(false)
   var show
   if(toggle){
-    show = 'modal-fade'
+    show = 'modal'
   }else{
-    show = 'modal-fade toggle-modal'
+    show = 'modal toggle-modal'
   }
   return (
       <div>
