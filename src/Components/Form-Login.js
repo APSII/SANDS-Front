@@ -31,6 +31,7 @@ export default function FormLogin(props) {
         
         history.push('/unidade')
       }).catch(res =>{
+        console.log(res)
         setOpen(true)
         setMsg(res.message)  
       })
