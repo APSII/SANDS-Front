@@ -1,0 +1,32 @@
+.card-usuario-container {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 512px;
+    background-color: whitesmoke;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 5px 3px 10px #888888;
+}
+
+.card-usuario-email>p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    color: #888888ad;
+    mix-blend-mode: normal;
+}
+
+.card-usuario-nomeUsuario {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+    color: #888888ad;
+    mix-blend-mode: normal;
+}

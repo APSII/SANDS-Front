@@ -1,8 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import Header from "../../Components/Header/Header";
 import Card from '../../Components/Card/Card'
 import Modal from '../../Components/Modal/Modal_Unidade'
+import api from '../../Service/api'
 import './Main.css'
 
 export default function Main() {
@@ -13,6 +14,7 @@ export default function Main() {
   }else{
     show = 'modal toggle-modal'
   }
+
   return (
       <div>
         <Header nome="Patrick" setToggle={setToggle} />
