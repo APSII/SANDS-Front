@@ -1,11 +1,18 @@
+/* eslint-disable no-console */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React from 'react';
 import { Chip } from '@material-ui/core/';
 import './Card.css';
 import imagem from '../../assets/sem_foto.png';
 
-export default function Card({ unidade, endereco }) {
+export default function Card({ unidade, endereco, click, val, user = false }) {
+  const handleClick = () => {
+    user ? click({ click: true, key: val }) : console.log('false');
+  };
   return (
-    <div className="container-card">
+    <div className="container-card" onClick={handleClick}>
       <div className="card-img">
         <img src={imagem} alt="Hemocentro" />
       </div>

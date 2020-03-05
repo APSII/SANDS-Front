@@ -2,6 +2,7 @@
 /* eslint-disable no-console */
 import React, { useState, useEffect } from 'react';
 
+import { useHistory } from 'react-router-dom';
 import Header from '../../Components/Header/Header';
 import Card from '../../Components/Card/Card';
 import Modal from '../../Components/Modal/Modal_Unidade';
@@ -10,12 +11,18 @@ import './Main.css';
 
 export default function Main() {
   const [toggle, setToggle] = useState(false);
-  const [o, setO] = useState([]);
+  const [click, setClick] = useState({ click: false, key: '' });
+  const [hemocentro, setHemocentro] = useState([]);
+  const history = useHistory();
   let show;
   if (toggle) {
     show = 'modal';
   } else {
     show = 'modal toggle-modal';
+  }
+  if (click.click) {
+    localStorage.setItem('unidadeId', click.key);
+    history.push('/usuarios');
   }
 
   useEffect(() => {
@@ -33,17 +40,20 @@ export default function Main() {
         ob.estado = un.endereco.cidade.estado.nome;
         return ob;
       });
-      setO(objeto);
+      setHemocentro(objeto);
     };
     loadUnidade();
   }, []);
 
-  const unidades = o.map(unidade => {
+  const unidades = hemocentro.map(unidade => {
     return (
       <Card
         key={unidade.id}
+        val={unidade.id}
         unidade={unidade.nome}
         endereco={unidade.endereco}
+        user
+        click={setClick}
       />
     );
   });

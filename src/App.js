@@ -11,6 +11,7 @@ import { createMuiTheme } from '@material-ui/core/styles';
 import Inicial from './Pages/Inicial/Inicial';
 import Doacoes from './Pages/Doacoes.js/Doacoes';
 import Main from './Pages/Main/Main';
+import Usuarios from './Pages/Usuarios/Usuarios';
 
 import './App.css';
 
@@ -27,16 +28,17 @@ function App() {
     <ThemeProvider theme={theme}>
       <Router>
         <Switch>
-          <Route
-            path="/"
-            exact
-            render={props => <Inicial {...props} page="login" />}
-          />
+          <Route path="/" exact>
+            {isAuthenticated ? <Redirect to="unidade" /> : <Inicial />}
+          </Route>
           <Route path="/doacoes">
             {isAuthenticated ? <Doacoes /> : <Redirect to="/" />}
           </Route>
-          <Route path="/unidade" component={Main}>
+          <Route path="/unidade">
             {isAuthenticated ? <Main /> : <Redirect to="/" />}
+          </Route>
+          <Route path="/usuarios">
+            {isAuthenticated ? <Usuarios /> : <Redirect to="/" />}
           </Route>
         </Switch>
       </Router>
