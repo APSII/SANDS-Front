@@ -6,12 +6,12 @@ import api from '../Service/api';
 
 // import { Container } from './styles';
 
-export default function FormLogin() {
+export default function FormLogin(props) {
   const [identificador, setIdentificador] = useState('');
   const [senha, setSenha] = useState('');
   const [open, setOpen] = useState(false);
   const [msg, setMsg] = useState('');
-  const history = useHistory();
+  let history = useHistory();
 
   const handleIdentificador = event => {
     setIdentificador(event.target.value);
@@ -19,7 +19,7 @@ export default function FormLogin() {
   const handleSenha = event => {
     setSenha(event.target.value);
   };
-  const handleClose = () => {
+  const handleClose = event => {
     setOpen(false);
   };
   const handleSubmit = event => {
@@ -33,6 +33,7 @@ export default function FormLogin() {
         history.push('/unidade');
       })
       .catch(res => {
+        console.log(res);
         setOpen(true);
         setMsg(res.message);
       });
@@ -66,7 +67,6 @@ export default function FormLogin() {
         size="small"
         color="primary"
       >
-        {' '}
         Entrar{' '}
       </Button>{' '}
       <Snackbar open={open} onClose={handleClose} autoHideDuration={4000}>

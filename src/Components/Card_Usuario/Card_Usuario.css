@@ -1,32 +1,65 @@
 .card-usuario-container {
     display: flex;
     flex-direction: column;
-    height: auto;
     width: 512px;
-    background-color: whitesmoke;
+    background-color: #FAFAFA;
     border-radius: 5px;
     margin-top: 10px;
     box-shadow: 5px 3px 10px #888888;
 }
 
-.card-usuario-email>p {
+.card-usuario-email {
+    padding: 0;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+a {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.25px;
-    color: #888888ad;
+    color: #646464;
     mix-blend-mode: normal;
 }
 
 .card-usuario-nomeUsuario {
+    padding: 0;
+    padding-left: 15px;
+}
+
+.card-usuario-nomeUsuario>h5 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 20px;
+    line-height: 28px;
+    color: #212121;
+}
+
+.card-usuario-resultado {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 20px;
     letter-spacing: 0.25px;
-    color: #888888ad;
+    color: #646464;
+    padding: 15px;
     mix-blend-mode: normal;
+    padding: 0;
+    padding-left: 15px;
+    padding-bottom: 15px;
+    padding-top: 11px;
+}
+
+h5 {
+    margin: 0;
+}
+
+.text-danger {
+    color: #f65858;
+    margin-bottom: -5px;
 }

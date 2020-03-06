@@ -1,0 +1,23 @@
+.card-unidade {
+    padding: 0;
+    padding-left: 30px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: left;
+    margin-left: 50px;
+}
+
+.card-usuario {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
+    padding: 0;
+    margin-left: 450px;
+    bottom: 300px;
+}
+
+h2 {}
