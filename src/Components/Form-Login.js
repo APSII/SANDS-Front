@@ -34,7 +34,7 @@ export default function FormLogin() {
       })
       .catch(res => {
         setOpen(true);
-        setMsg(res.message);
+        setMsg(res.response.data.message);
       });
   };
 
