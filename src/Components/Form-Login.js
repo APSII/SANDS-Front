@@ -6,12 +6,12 @@ import api from '../Service/api';
 
 // import { Container } from './styles';
 
-export default function FormLogin(props) {
+export default function FormLogin() {
   const [identificador, setIdentificador] = useState('');
   const [senha, setSenha] = useState('');
   const [open, setOpen] = useState(false);
   const [msg, setMsg] = useState('');
-  let history = useHistory();
+  const history = useHistory();
 
   const handleIdentificador = event => {
     setIdentificador(event.target.value);
@@ -19,7 +19,7 @@ export default function FormLogin(props) {
   const handleSenha = event => {
     setSenha(event.target.value);
   };
-  const handleClose = event => {
+  const handleClose = () => {
     setOpen(false);
   };
   const handleSubmit = event => {
@@ -33,7 +33,6 @@ export default function FormLogin(props) {
         history.push('/unidade');
       })
       .catch(res => {
-        console.log(res);
         setOpen(true);
         setMsg(res.message);
       });
@@ -49,7 +48,7 @@ export default function FormLogin(props) {
         variant="outlined"
         value={identificador}
         onChange={handleIdentificador}
-      />{' '}
+      />
       <TextField
         className="input-login"
         id="senha"
@@ -59,7 +58,7 @@ export default function FormLogin(props) {
         variant="outlined"
         value={senha}
         onChange={handleSenha}
-      />{' '}
+      />
       <Button
         className="input-login"
         variant="contained"
@@ -67,14 +66,13 @@ export default function FormLogin(props) {
         size="small"
         color="primary"
       >
-        Entrar{' '}
-      </Button>{' '}
+        Entrar
+      </Button>
       <Snackbar open={open} onClose={handleClose} autoHideDuration={4000}>
         <Alert onClose={handleClose} severity="error">
-          {' '}
-          {msg}{' '}
-        </Alert>{' '}
-      </Snackbar>{' '}
+          {msg}
+        </Alert>
+      </Snackbar>
     </form>
   );
 }
