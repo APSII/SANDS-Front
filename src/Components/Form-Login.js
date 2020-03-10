@@ -65,6 +65,7 @@ export default function FormLogin() {
         type="submit"
         size="small"
         color="primary"
+        onKeyPress={handleSubmit}
       >
         Entrar
       </Button>

@@ -1,0 +1,13 @@
+.main-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;    
+}
+.main-container>.container-card{
+    margin: 40px;
+}
+.main-container > .usuarios-container{
+    margin: 20px;
+    width: 60%;
+}

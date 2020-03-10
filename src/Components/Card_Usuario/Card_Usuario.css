@@ -1,7 +1,8 @@
 .card-usuario-container {
     display: flex;
     flex-direction: column;
-    width: 512px;
+    width: 100%;
+    max-width: 640px;
     background-color: #FAFAFA;
     border-radius: 5px;
     margin-top: 10px;
@@ -14,12 +15,11 @@
     padding-top: 15px;
 }
 
-p {
+.card-usuario-email>p {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
-    line-height: 20px;
+    font-size: 12px;
     letter-spacing: 0.25px;
     color: #646464;
     mix-blend-mode: normal;
@@ -34,8 +34,7 @@ p {
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;
-    font-size: 20px;
-    line-height: 28px;
+    font-size: 16px;
     color: #212121;
 }
 
@@ -44,15 +43,10 @@ p {
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
-    line-height: 20px;
     letter-spacing: 0.25px;
     color: #646464;
-    padding: 15px;
+    padding: 10px;
     mix-blend-mode: normal;
-    padding: 0;
-    padding-left: 15px;
-    padding-bottom: 15px;
-    padding-top: 11px;
 }
 
 h5 {
