@@ -20,4 +20,12 @@
     bottom: 300px;
 }
 
-h2 {}
+h2 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 34px;
+    line-height: 40px;
+    color: #212121;
+    letter-spacing: 0.25px;
+}
