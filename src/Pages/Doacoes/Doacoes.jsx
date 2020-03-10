@@ -4,7 +4,7 @@ import Card from '../../Components/Card/Card';
 import Modal from '../../Components/Modal/Modal_Usuario';
 import CardUsuario from '../../Components/Card_Usuario/Card_Usuario';
 import api from '../../Service/api';
-import './Usuarios.css';
+import './Doacoes.css';
 // import { Container } from './styles';
 
 export default function Usuarios() {

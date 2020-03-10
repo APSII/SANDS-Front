@@ -9,6 +9,9 @@
     margin-top: 10px;
     box-shadow: 5px 3px 10px #888888;
 }
+.container-card:hover{
+    cursor: pointer;
+}
 
 .container-card>.card-img {
     border-radius: 30px;

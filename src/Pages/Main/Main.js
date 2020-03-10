@@ -60,7 +60,7 @@ export default function Main() {
 
   return (
     <div>
-      <Header nome="Patrick" setToggle={setToggle} />
+      <Header nome="Patrick" setToggle={setToggle} local="unidade" />
       <div className="main-container">{unidades}</div>
       <Modal show={show} setToggle={setToggle} />
     </div>

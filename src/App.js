@@ -9,7 +9,7 @@ import { ThemeProvider } from '@material-ui/core';
 import { createMuiTheme } from '@material-ui/core/styles';
 
 import Inicial from './Pages/Inicial/Inicial';
-import Doacoes from './Pages/Doacoes.js/Doacoes';
+import Doacoes from './Pages/Doacoes/Doacoes';
 import Main from './Pages/Main/Main';
 import Usuarios from './Pages/Usuarios/Usuarios';
 
