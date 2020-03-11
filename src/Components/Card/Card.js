@@ -2,15 +2,30 @@
 /* eslint-disable no-unused-expressions */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Chip } from '@material-ui/core/';
+import { useHistory } from 'react-router-dom';
+import api from '../../Service/api';
 import './Card.css';
 import imagem from '../../assets/sem_foto.png';
 
 export default function Card({ unidade, endereco, click, val, user = false }) {
+  const [usuario, setUsuario] = useState([]);
+  const history = useHistory();
+  useEffect(() => {
+    const loadUsuarios = async () => {
+      const response = await api.get(`/usuario?hemocentroId=${val}`);
+      const usuarios = await response.data.data;
+      setUsuario(usuarios);
+    };
+    loadUsuarios();
+  }, []);
   const handleClick = () => {
-    user ? click({ click: true, key: val }) : console.log('false');
+    user ? click({ click: true, key: val }) : history.push('/doacoes');
   };
+  const usuarios = usuario.map(({ id, nome }) => {
+    return <Chip key={id} label={nome} />;
+  });
   return (
     <div className="container-card" onClick={handleClick}>
       <div className="card-img">
@@ -28,12 +43,7 @@ export default function Card({ unidade, endereco, click, val, user = false }) {
           <div className="card-label-usuarios">
             <h5>Usuarios</h5>
           </div>
-          <div className="usuario-chips">
-            <Chip label="Patrick" />
-            <Chip label="Guilherme" />
-            <Chip label="Karol" />
-            <Chip label="Jean" />
-          </div>
+          <div className="usuario-chips">{usuarios}</div>
         </div>
       </div>
     </div>
