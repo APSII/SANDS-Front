@@ -1,7 +1,8 @@
 .doacao-usuario-container {
     display: flex;
-    flex-direction: column;
-    width: 512px;
+    flex-direction: row;
+    width: 100%;
+    max-width: 640px;
     border-radius: 5px;
     margin-top: 10px;
 }
@@ -23,10 +24,7 @@
 }
 
 .doacao-usuario-icon {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: left;
+    align-self: center;
 }
 
 .text-danger {

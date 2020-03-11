@@ -43,7 +43,7 @@ export default function Main() {
       setHemocentro(objeto);
     };
     loadUnidade();
-  }, []);
+  }, [toggle]);
 
   const unidades = hemocentro.map(unidade => {
     return (
@@ -60,7 +60,7 @@ export default function Main() {
 
   return (
     <div>
-      <Header nome="Patrick" setToggle={setToggle} local="unidade" />
+      <Header nome="Patrick" setToggle={setToggle} local="Cadastrar Unidade" />
       <div className="main-container">{unidades}</div>
       <Modal show={show} setToggle={setToggle} />
     </div>

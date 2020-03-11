@@ -12,6 +12,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 4%;
 }
 .container-header>.titulo{
     height: 30px;

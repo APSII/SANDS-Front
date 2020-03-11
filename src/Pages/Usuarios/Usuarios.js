@@ -44,7 +44,7 @@ export default function Usuarios() {
       setUsuario(usuarios);
     };
     loadUsuarios();
-  }, []);
+  }, [toggle]);
 
   const unidade = hemocentro.map(un => {
     return (
@@ -57,7 +57,7 @@ export default function Usuarios() {
 
   return (
     <div>
-      <Header nome="Patrick" local="usuarios" setToggle={setToggle} />
+      <Header nome="Patrick" local="Cadastrar Usuario" setToggle={setToggle} />
       <div className="main-container">
         {unidade}
         <div className="usuarios-container">

@@ -42,6 +42,7 @@
 }
 
 .card-usuario-resultado {
+    display: flex;
     font-family: Roboto;
     font-style: normal;
     font-weight: normal;

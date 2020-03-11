@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { format, parseISO } from 'date-fns';
 import Header from '../../Components/Header/Header';
 import Card from '../../Components/Card/Card';
-import Modal from '../../Components/Modal/Modal_Usuario';
-import CardUsuario from '../../Components/Card_Usuario/Card_Usuario';
+import Modal from '../../Components/Modal/Modal_Doador';
+import DoacaoUsuario from '../../Components/Card_Usuario/Doacao_Usuario';
 import api from '../../Service/api';
 import './Doacoes.css';
 // import { Container } from './styles';
@@ -38,13 +39,12 @@ export default function Usuarios() {
 
   useEffect(() => {
     const loadUsuarios = async () => {
-      const hemocentroID = localStorage.getItem('unidadeId');
-      const response = await api.get(`/usuario?hemocentroId=${hemocentroID}`);
+      const response = await api.get(`/doador`);
       const usuarios = await response.data.data;
       setUsuario(usuarios);
     };
     loadUsuarios();
-  }, []);
+  }, [toggle]);
 
   const unidade = hemocentro.map(un => {
     return (
@@ -52,16 +52,18 @@ export default function Usuarios() {
     );
   });
   const usuarios = usuario.map(user => {
-    return <CardUsuario key={user.id} nome={user.nome} email={user.email} />;
+    const fdata = parseISO(user.updatedAt);
+    const data = format(fdata, 'dd/MM/yyyy HH:mm');
+    return <DoacaoUsuario key={user.id} nome={user.nome} data={data} />;
   });
 
   return (
     <div>
-      <Header nome="Patrick" local="usuarios" setToggle={setToggle} />
+      <Header nome="Patrick" local="Cadastrar Doador" setToggle={setToggle} />
       <div className="main-container">
         {unidade}
         <div className="usuarios-container">
-          <h2>Usuarios</h2>
+          <h2>Doadores</h2>
           {usuarios}
         </div>
       </div>

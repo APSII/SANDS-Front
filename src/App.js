@@ -22,28 +22,32 @@ const palette = {
 
 const theme = createMuiTheme({ palette });
 
+const isAuthenticated = () => localStorage.getItem('auth_token') !== null;
 function App() {
-  const isAuthenticated = localStorage.getItem('auth_token') !== null;
   return (
     <ThemeProvider theme={theme}>
       <Router>
         <Switch>
-          <Route path="/" exact>
-            {isAuthenticated ? <Redirect to="unidade" /> : <Inicial />}
-          </Route>
-          <Route path="/doacoes">
-            {isAuthenticated ? <Doacoes /> : <Redirect to="/" />}
-          </Route>
-          <Route path="/unidade">
-            {isAuthenticated ? <Main /> : <Redirect to="/" />}
-          </Route>
-          <Route path="/usuarios">
-            {isAuthenticated ? <Usuarios /> : <Redirect to="/" />}
-          </Route>
+          <PrivateRoute path="/unidade" component={Main} />
+          <PrivateRoute path="/usuarios" component={Usuarios} />
+          <PrivateRoute path="/doacoes" component={Doacoes} />
+          <Route path="/" exact component={Inicial} />
         </Switch>
       </Router>
     </ThemeProvider>
   );
 }
+const PrivateRoute = ({ component: Component, ...rest }) => (
+  <Route
+    {...rest}
+    render={props =>
+      isAuthenticated() ? (
+        <Component {...props} />
+      ) : (
+        <Redirect to={{ pathname: '/', state: { from: props.location } }} />
+      )
+    }
+  />
+);
 
 export default App;

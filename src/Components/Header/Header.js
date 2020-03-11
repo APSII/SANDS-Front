@@ -14,8 +14,8 @@ export default function Header({ setToggle, nome, local }) {
     setToggle(true);
   };
   const handleExit = () => {
-    localStorage.removeItem('auth_token');
-    history.push('/');
+    localStorage.clear();
+    history.replace('/');
   };
   return (
     <div className="container-header">
@@ -34,25 +34,14 @@ export default function Header({ setToggle, nome, local }) {
       </div>
       <div className="titulo">
         <p>{nome}</p>
-        {local === 'unidade' ? (
-          <Button
-            variant="contained"
-            onClick={handleClick}
-            color="primary"
-            startIcon={<AddIcon />}
-          >
-            CRIAR UNIDADE
-          </Button>
-        ) : (
-          <Button
-            variant="contained"
-            onClick={handleClick}
-            color="primary"
-            startIcon={<AddIcon />}
-          >
-            CRIAR USUARIO
-          </Button>
-        )}
+        <Button
+          variant="contained"
+          onClick={handleClick}
+          color="primary"
+          startIcon={<AddIcon />}
+        >
+          {local}
+        </Button>
       </div>
       <Divider />
     </div>

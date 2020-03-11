@@ -28,9 +28,16 @@ export default function FormLogin() {
       .post('/auth', { strategy: 'local', identificador, password: senha })
       .then(res => {
         const token = res.data.accessToken;
+        const { admin, hemocentroId } = res.data.usuario;
         localStorage.setItem('auth_token', token);
+        localStorage.setItem('admin', admin);
+        localStorage.setItem('unidadeId', hemocentroId);
 
-        history.push('/unidade');
+        if (admin) {
+          history.replace('/unidade');
+        } else {
+          history.replace('/doacoes');
+        }
       })
       .catch(res => {
         setOpen(true);
