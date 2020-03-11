@@ -3,6 +3,7 @@ import Header from "../../Components/Header/Header";
 import './Doacoes.css';
 import CardUsuario from '../../Components/Card_Usuario/Card_Usuario';
 import Card from '../../Components/Card/Card';
+import DoacaoUsuario from '../../Components/Card_Usuario/Doacao_Usuario';
 
 export default function Doacoes() {
     return ( 
@@ -15,6 +16,10 @@ export default function Doacoes() {
             <h2>Usuários</h2>
             <CardUsuario/>
         </div>
+        <div className="doacao-usuario" >
+            <DoacaoUsuario/>
+        </div>
+        
      </div>
     );
 }

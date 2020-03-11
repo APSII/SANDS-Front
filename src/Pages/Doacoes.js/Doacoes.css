@@ -29,3 +29,14 @@ h2 {
     color: #212121;
     letter-spacing: 0.25px;
 }
+
+.doacao-usuario {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
+    padding: 0;
+    margin-left: 450px;
+    bottom: 300px;
+}
