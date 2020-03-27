@@ -1,0 +1,63 @@
+.card-usuario-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 640px;
+    background-color: #FAFAFA;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-shadow: 5px 3px 7px #888888;
+}
+.card-usuario-container:hover{
+    cursor: pointer;
+}
+
+.card-usuario-email {
+    padding: 0;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+.card-usuario-email>p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    letter-spacing: 0.25px;
+    color: #646464;
+    mix-blend-mode: normal;
+}
+
+.card-usuario-nomeUsuario {
+    padding: 0;
+    padding-left: 15px;
+}
+
+.card-usuario-nomeUsuario>h5 {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    color: #212121;
+}
+
+.card-usuario-resultado {
+    display: flex;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    letter-spacing: 0.25px;
+    color: #646464;
+    padding: 10px;
+    mix-blend-mode: normal;
+}
+
+h5 {
+    margin: 0;
+}
+
+.text-danger {
+    color: #f65858;
+    margin-bottom: -5px;
+}

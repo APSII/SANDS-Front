@@ -1,0 +1,40 @@
+.modal{
+    background-color: rgba(27, 26, 26, 0.8);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+}
+.modal-fade{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+}
+.modal-container{
+    height: 350px;
+    width: 300px;
+    background-color: white;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+.modal-container>form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.modal-container>form>.input-modal {
+    margin: 5px;
+    width: 100%;
+}
+.toggle-modal {
+    display: none;
+}

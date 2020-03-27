@@ -1,0 +1,29 @@
+.container-header{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.container-header >.barra-icones{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.container-header >.barra-icones >.logo-header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 4%;
+}
+.container-header>.titulo{
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.container-header>.titulo>p{
+    margin: 0 0 0 4%;
+}
+.container-header>.titulo>button{
+    margin-bottom: auto;
+    margin-right: 25px;
+}

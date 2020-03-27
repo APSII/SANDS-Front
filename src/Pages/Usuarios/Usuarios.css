@@ -1,0 +1,33 @@
+.main-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;    
+}
+.main-container>.container-card{
+    margin: 40px;
+}
+.main-container > .usuarios-container{
+    margin: 20px;
+    width: 60%;
+}
+.card-login{
+    height: 350px;
+    width: 300px;
+    background-color: white;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-login>form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-login>form>.input-login{
+    margin: 5px;
+    width: 100%;
+}

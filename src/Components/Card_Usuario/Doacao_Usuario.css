@@ -1,0 +1,42 @@
+.doacao-usuario-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 640px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.doacao-usuario-nomeUsuario {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    align-items: right;
+    padding: 0;
+    padding-left: 15px;
+    padding-top: 15px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 24px;
+    color: #212121;
+}
+
+.doacao-usuario-icon {
+    align-self: center;
+}
+
+.text-danger {
+    color: #f65858;
+    margin-bottom: -5px;
+}
+
+p {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    color: #646464;
+}

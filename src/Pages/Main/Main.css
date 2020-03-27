@@ -1,0 +1,8 @@
+.main-container{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.main-container>.container-card{
+    margin: 40px;
+}
